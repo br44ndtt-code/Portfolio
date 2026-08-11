@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Brandt — Creative Developer &amp; Digital Creator</title>
+<meta name="description" content="Brandt (Jonas Hansen) — creative developer and digital creator. Roblox and Fortnite development, 215K YouTube subscribers, 25M+ views." />
+<meta name="theme-color" content="#08090C" />
+
+<!-- Social preview. Replace the image path once you add images/og.jpg -->
+<meta property="og:type" content="website" />
+<meta property="og:title" content="Creative Developer & Digital Creator" />
+<meta property="og:description" content="Roblox and Fortnite developer, and the creator behind BerryBacon — 215K subscribers, 25M views." />
+<meta property="og:image" content="images/og.jpg" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700&family=Instrument+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="nav" id="nav">
+  <div class="wrap nav__inner">
+    <a class="nav__mark" href="#top"><span class="dot"></span><span data-bind="navName"></span></a>
+    <nav class="nav__links" id="navLinks" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#results">Results</a>
+      <a href="#work">Work</a>
+      <a href="#services">Services</a>
+      <a class="nav__cta" href="#contact">Get in touch</a>
+    </nav>
+    <button class="nav__toggle" id="navToggle" aria-expanded="false" aria-controls="navLinks" aria-label="Open menu">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<noscript><p style="padding:24px;font-family:sans-serif">This site needs JavaScript enabled. Email: br44ndtt@gmail.com</p></noscript>
+
+<main id="main">
+
+  <!-- 1. HERO -->
+  <section class="hero" id="top">
+    <div class="wrap hero__grid">
+      <div class="hero__copy">
+        <p class="eyebrow reveal"><span class="pulse"></span><span data-bind="heroEyebrow"></span></p>
+        <h1 class="hero__name reveal" data-bind="heroName"></h1>
+        <p class="hero__role reveal" data-bind="heroRole"></p>
+        <p class="hero__desc reveal" data-bind="heroDesc"></p>
+        <div class="btnrow reveal" id="heroButtons"></div>
+      </div>
+      <div class="hero__media reveal" id="heroMedia"></div>
+    </div>
+    <div class="wrap">
+      <ul class="proof reveal" id="heroProof"></ul>
+    </div>
+  </section>
+
+  <!-- 2. ABOUT -->
+  <section class="section" id="about">
+    <div class="wrap about__grid">
+      <div class="about__main">
+        <p class="eyebrow reveal" data-bind="aboutEyebrow"></p>
+        <h2 class="h2 reveal" data-bind="aboutHeading"></h2>
+        <div class="prose reveal" id="aboutBody"></div>
+      </div>
+      <dl class="facts reveal" id="aboutFacts"></dl>
+    </div>
+  </section>
+
+  <!-- 3. RESULTS -->
+  <section class="section section--edge" id="results">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-bind="resultsEyebrow"></p>
+      <h2 class="h2 reveal" data-bind="resultsHeading"></h2>
+      <ul class="stats" id="statList"></ul>
+    </div>
+  </section>
+
+  <!-- 4. WORK -->
+  <section class="section" id="work">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-bind="workEyebrow"></p>
+      <h2 class="h2 reveal" data-bind="workHeading"></h2>
+      <p class="lead reveal" data-bind="workIntro"></p>
+      <div class="cards" id="projectList"></div>
+    </div>
+  </section>
+
+  <!-- 5. SERVICES -->
+  <section class="section section--edge" id="services">
+    <div class="wrap">
+      <p class="eyebrow reveal" data-bind="servicesEyebrow"></p>
+      <h2 class="h2 reveal" data-bind="servicesHeading"></h2>
+      <div class="services" id="serviceList"></div>
+    </div>
+  </section>
+
+  <!-- 6. CONTACT -->
+  <section class="section contact" id="contact">
+    <div class="wrap contact__grid">
+      <div>
+        <p class="eyebrow reveal" data-bind="contactEyebrow"></p>
+        <h2 class="h2 reveal" data-bind="contactHeading"></h2>
+        <p class="lead reveal" data-bind="contactText"></p>
+        <div class="btnrow reveal" id="contactButtons"></div>
+      </div>
+      <ul class="channels reveal" id="channels"></ul>
+    </div>
+  </section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__inner">
+    <span data-bind="footerName"></span>
+    <span data-bind="footerNote"></span>
+    <span id="footerYear"></span>
+  </div>
+</footer>
+
+<script src="content.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
