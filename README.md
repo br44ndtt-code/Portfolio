@@ -53,6 +53,27 @@ media: { type: "image", src: "images/roblox-game.jpg", alt: "Gameplay screenshot
 media: { type: "video", src: "https://www.youtube.com/embed/ABC123" },
 ```
 
+**A grid of several images** (used on the thumbnail card):
+```js
+media: {
+  type: "gallery",
+  images: [
+    { src: "images/thumb-client-tax.jpg", alt: "Tax explainer thumbnail" },
+    { src: "images/thumb-client-rv.jpg",  alt: "RV road trip thumbnail" },
+  ],
+},
+```
+
+**A before/after row under a card** — add a `strip` next to `media`:
+```js
+strip: {
+  label: "Raw footage → finished thumbnail",
+  images: [
+    { src: "images/before-after-car.jpg", alt: "Before and after" },
+  ],
+},
+```
+
 **Back to a placeholder:**
 ```js
 media: { type: "placeholder", spec: "1600 × 900", note: "Gameplay screenshot" },

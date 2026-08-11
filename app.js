@@ -10,6 +10,19 @@
   const arrow = '<span class="arrow">→</span>';
 
   /* ---------- media / placeholder frame ---------- */
+  function gallery(items = []) {
+    const g = el("div", "gallery");
+    items.forEach(it => {
+      const cell = el("figure", "gallery__cell");
+      const img = el("img");
+      img.src = it.src; img.alt = it.alt || ""; img.loading = "lazy"; img.decoding = "async";
+      cell.appendChild(img);
+      if (it.caption) cell.appendChild(el("figcaption", null, esc(it.caption)));
+      g.appendChild(cell);
+    });
+    return g;
+  }
+  /* ---------- media / placeholder frame ---------- */
   function media(m = {}, extraClass = "") {
     const box = el("div", `canvas ${extraClass}`);
     if (m.type === "image" && m.src) {
@@ -22,6 +35,8 @@
       f.allow = "accelerometer; clipboard-write; encrypted-media; picture-in-picture";
       f.allowFullscreen = true;
       box.appendChild(f);
+    } else if (m.type === "gallery" && m.images) {
+      return gallery(m.images);
     } else {
       box.classList.add("canvas--empty");
       box.appendChild(el("div", "canvas__label",
@@ -102,6 +117,15 @@
     const wrap = el("div", "card__media");
     wrap.appendChild(media(p.media));
     card.appendChild(wrap);
+
+    if (p.strip) {
+      const strip = el("div", "strip");
+      strip.appendChild(el("p", "strip__label", esc(p.strip.label)));
+      const g = gallery(p.strip.images);
+      g.classList.add("gallery--tall");
+      strip.appendChild(g);
+      card.appendChild(strip);
+    }
     list.appendChild(card);
   });
 

@@ -321,6 +321,7 @@ button{ font: inherit; }
 /* Projects */
 .cards{ display:grid; gap: clamp(18px, 2vw, 24px); margin-top: clamp(28px, 3vw, 40px); }
 .card__body{ min-width:0; }
+.card:has(.strip){ align-items:start; }
 
 .card{
   display:grid;
@@ -362,6 +363,35 @@ button{ font: inherit; }
   transition: color .2s ease, border-color .2s ease;
 }
 .card__link:hover{ color: var(--accent); border-color: var(--accent); }
+
+/* Gallery + before/after strip */
+.gallery{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.gallery__cell{ margin:0; }
+.gallery__cell img{
+  width:100%; aspect-ratio:16/9; object-fit:cover;
+  border:1px solid var(--line); border-radius:10px;
+  background: var(--panel);
+  transition: border-color .25s ease, transform .25s ease;
+}
+.gallery__cell img:hover{ border-color: var(--line-2); transform: scale(1.015); }
+.gallery__cell figcaption{
+  font-family: var(--mono); font-size:10.5px; letter-spacing:.1em; text-transform:uppercase;
+  color: var(--muted); margin-top:8px; text-align:center;
+}
+
+.gallery--tall{ grid-template-columns: repeat(3, 1fr); gap: clamp(12px, 1.6vw, 20px); }
+.gallery--tall .gallery__cell img{ aspect-ratio: 9/11; object-fit: contain; }
+
+.strip{
+  grid-column: 1 / -1;
+  margin-top: clamp(24px, 3vw, 34px);
+  padding-top: clamp(22px, 2.6vw, 30px);
+  border-top:1px solid var(--line);
+}
+.strip__label{
+  font-family: var(--mono); font-size:11.5px; letter-spacing:.13em; text-transform:uppercase;
+  color: var(--muted); margin-bottom:18px;
+}
 
 /* Services */
 .services{
@@ -446,6 +476,7 @@ button{ font: inherit; }
   .proof li{ padding: 18px 0; }
 
   .services{ grid-template-columns: 1fr; }
+  .gallery--tall{ grid-template-columns: 1fr; max-width:420px; margin-inline:auto; }
   .facts div{ flex-direction:column; gap:4px; }
   .facts dd{ text-align:left; }
   .meta div{ flex-direction:column; gap:2px; }

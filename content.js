@@ -33,7 +33,7 @@ const SITE = {
     // Add a file to /images and put the path here, e.g.
     // media: { type: "image", src: "images/hero.jpg" }
     // media: { type: "video", src: "https://www.youtube.com/embed/VIDEO_ID" }
-    media: { type: "placeholder", spec: "1600 × 900", note: "Best-performing Short, or a game screenshot" },
+    media: { type: "image", src: "images/thumb-seeker-hider.jpg", alt: "Roblox hide-and-seek thumbnail: seeker and camouflaged hider" },
   },
 
   /* ---------- 3. ABOUT ---------- */
@@ -78,7 +78,7 @@ const SITE = {
   work: {
     eyebrow: "Selected work",
     heading: "Things I've actually built.",
-    intro: "Screenshots and links are still going in — the marked frames below show where each one lands.",
+    intro: "Games I've built, content I've grown, and design work people paid for.",
     projects: [
       {
         tag: "YouTube",
@@ -97,7 +97,7 @@ const SITE = {
           "Round-based multiplayer games built end to end: gameplay systems, UI and VFX, data saving, monetisation and the polish that makes a session feel good enough to replay.",
         role: "Game design, Luau development, UI/UX, live ops",
         result: "Live games with returning players",
-        media: { type: "placeholder", spec: "1600 × 900", note: "Gameplay screenshot" },
+        media: { type: "image", src: "images/thumb-paint-frame.jpg", alt: "Roblox paint-and-hide game artwork" },
         link: { label: "Play on Roblox", href: "#" },   // ← paste your game link
       },
       {
@@ -114,10 +114,28 @@ const SITE = {
         tag: "Design",
         title: "Thumbnails for creators",
         description:
-          "Paid thumbnail work for other YouTubers. Bold, readable frames built to win the click at phone size — designed with the click-through data from my own channel behind them.",
+          "Paid thumbnail work for other YouTubers, across gaming, strategy and explainer content. I cut the subject out of raw footage, rebuild the scene around it, and push colour and contrast until the frame reads at phone size. The before-and-afters below are the same shot start to finish.",
         role: "Concept, composition, retouching, A/B variants",
         result: "Repeat paid client work",
-        media: { type: "placeholder", spec: "1600 × 900", note: "Grid of your six best thumbnails" },
+        media: {
+          type: "gallery",
+          images: [
+            { src: "images/thumb-client-tax.jpg",    alt: "Danish tax explainer thumbnail" },
+            { src: "images/thumb-client-rv.jpg",     alt: "RV road trip thumbnail" },
+            { src: "images/thumb-client-knight.jpg", alt: "Strategy game thumbnail with knight" },
+            { src: "images/thumb-client-king.jpg",   alt: "Strategy game thumbnail with king" },
+            { src: "images/thumb-seeker-hider.jpg",  alt: "Roblox seeker and hider thumbnail" },
+            { src: "images/thumb-paint-frame.jpg",   alt: "Roblox paint game thumbnail" },
+          ],
+        },
+        strip: {
+          label: "Raw footage → finished thumbnail",
+          images: [
+            { src: "images/before-after-car.jpg",    alt: "Before and after: car washing thumbnail" },
+            { src: "images/before-after-rv.jpg",     alt: "Before and after: RV road trip thumbnail" },
+            { src: "images/before-after-knight.jpg", alt: "Before and after: knight strategy thumbnail" },
+          ],
+        },
         link: null,
       },
       {
